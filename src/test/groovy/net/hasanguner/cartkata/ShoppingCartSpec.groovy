@@ -10,10 +10,10 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         and:
         def furniture = Category.of("Furniture")
-        def table = new Product("Table", BigDecimal.valueOf(1_000.0), furniture)
+        def table = new Product("Table", 1_000.0, furniture)
         when:
         cart.addItem(macBookPro, 1)
         cart.addItem(macBookPro, 2)
@@ -46,7 +46,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 1)
         and:
         def tenPercentOff = new Campaign(10.0, DiscountType.RATE, computers, 2)
@@ -61,7 +61,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def tenPercentOff = new Campaign(10.0, DiscountType.RATE, computers, 3)
@@ -78,7 +78,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def tenPercentOff = new Campaign(10.0, DiscountType.RATE, computers, 1)
@@ -97,7 +97,7 @@ class ShoppingCartSpec extends Specification {
         def electronics = Category.of("Electronics")
         def computers = new Category("Computers", electronics)
         def macBooks = new Category("MacBooks", computers)
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), macBooks)
+        def macBookPro = new Product("MacBookPro", 10_000.0, macBooks)
         cart.addItem(macBookPro, 2)
         and:
         def tenPercentOffOnAllElectronics = new Campaign(10.0, DiscountType.RATE, electronics, 1)
@@ -113,7 +113,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def thousandLiraDiscount = new Campaign(1_000.0, DiscountType.AMOUNT, computers, 1)
@@ -132,7 +132,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def thousandLiraDiscount = new Campaign(1_000.0, DiscountType.AMOUNT, computers, 1)
@@ -149,7 +149,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def tenThousandLiraDiscount = new Campaign(10_000.0, DiscountType.AMOUNT, computers, 1)
@@ -179,7 +179,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 1)
         and:
         def coupon = new Coupon(2_000.0, DiscountType.AMOUNT, 11_000.0)
@@ -194,7 +194,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def coupon = new Coupon(2_000.0, DiscountType.AMOUNT, 11_000.0)
@@ -210,7 +210,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def twoThousandLiraOff = new Coupon(2_000.0, DiscountType.AMOUNT, 11_000.0)
@@ -229,7 +229,7 @@ class ShoppingCartSpec extends Specification {
         def calculator = Mock(DeliveryCostCalculator)
         def cart = new ShoppingCart(calculator)
         def computers = Category.of("computers")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
         cart.addItem(macBookPro, 2)
         and:
         def twentyThousandLiraOff = new Coupon(20_000.0, DiscountType.AMOUNT, 11_000.0)
@@ -249,11 +249,11 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
-        def refrigerator = new Product("Bosh Refrigerator", BigDecimal.valueOf(5_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
+        def refrigerator = new Product("Bosh Refrigerator", 5_000.0, electronics)
         and:
         def furniture = Category.of("Furniture")
-        def table = new Product("Table", BigDecimal.valueOf(1_000.0), furniture)
+        def table = new Product("Table", 1_000.0, furniture)
         when:
         cart.addItem(refrigerator, 1)
         cart.addItem(macBookPro, 2)
@@ -269,11 +269,11 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
-        def refrigerator = new Product("Bosh Refrigerator", BigDecimal.valueOf(5_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
+        def refrigerator = new Product("Bosh Refrigerator", 5_000.0, electronics)
         and:
         def furniture = Category.of("Furniture")
-        def table = new Product("Table", BigDecimal.valueOf(1_000.0), furniture)
+        def table = new Product("Table", 1_000.0, furniture)
         when:
         cart.addItem(refrigerator, 1)
         cart.addItem(macBookPro, 2)
@@ -289,7 +289,7 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
         and:
         cart.addItem(macBookPro, 1)
         and:
@@ -307,7 +307,7 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
         and:
         cart.addItem(macBookPro, 2)
         and:
@@ -325,7 +325,7 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
         and:
         cart.addItem(macBookPro, 2)
         and:
@@ -343,7 +343,7 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
         and:
         cart.addItem(macBookPro, 2)
         and:
@@ -361,7 +361,7 @@ class ShoppingCartSpec extends Specification {
         def cart = new ShoppingCart(calculator)
         and:
         def electronics = Category.of("electronics")
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, electronics)
         cart.addItem(macBookPro, 2)
         and:
         def thousandLiraOff = new Coupon(1_000.0, DiscountType.AMOUNT, 10_000.0)
@@ -382,10 +382,10 @@ class ShoppingCartSpec extends Specification {
         and:
         def electronics = Category.of("electronics")
         def computers = new Category("Computers", electronics)
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
-        def refrigerator = new Product("Bosh Refrigerator", BigDecimal.valueOf(5_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
+        def refrigerator = new Product("Bosh Refrigerator", 5_000.0, electronics)
         def furniture = Category.of("Furniture")
-        def table = new Product("Table", BigDecimal.valueOf(1_000.0), furniture)
+        def table = new Product("Table", 1_000.0, furniture)
         and:
         cart.addItem(refrigerator, 1)
         cart.addItem(macBookPro, 2)

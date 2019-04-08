@@ -14,10 +14,10 @@ class ShoppingCartIntegrationSpec extends Specification {
         and:
         def electronics = Category.of("electronics")
         def computers = new Category("Computers", electronics)
-        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), computers)
-        def refrigerator = new Product("Bosh Refrigerator", BigDecimal.valueOf(5_000.0), electronics)
+        def macBookPro = new Product("MacBookPro", 10_000.0, computers)
+        def refrigerator = new Product("Bosh Refrigerator", 5_000.0, electronics)
         def furniture = Category.of("Furniture")
-        def table = new Product("Table", BigDecimal.valueOf(1_000.0), furniture)
+        def table = new Product("Table", 1_000.0, furniture)
         and:
         cart.addItem(refrigerator, 1)
         cart.addItem(macBookPro, 2)

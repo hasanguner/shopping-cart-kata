@@ -90,6 +90,24 @@ class ShoppingCartSpec extends Specification {
         cart.getCampaignDiscount() == 2_000.0
     }
 
+    def "apply discounts attempt with a campaign which aims a parent category should succeed"() {
+        given:
+        def calculator = Mock(DeliveryCostCalculator)
+        def cart = new ShoppingCart(calculator)
+        def electronics = Category.of("Electronics")
+        def computers = new Category("Computers", electronics)
+        def macBooks = new Category("MacBooks", computers)
+        def macBookPro = new Product("MacBookPro", BigDecimal.valueOf(10_000.0), macBooks)
+        cart.addItem(macBookPro, 2)
+        and:
+        def tenPercentOffOnAllElectronics = new Campaign(10.0, DiscountType.RATE, electronics, 1)
+        when:
+        def result = cart.applyDiscounts(tenPercentOffOnAllElectronics)
+        then:
+        result
+        cart.getCampaignDiscount() == 2_000.0
+    }
+
     def "apply discount attempt on already campaign applied cart with less effective campaign should not succeed"() {
         given:
         def calculator = Mock(DeliveryCostCalculator)
